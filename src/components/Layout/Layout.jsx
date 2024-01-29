@@ -3,6 +3,7 @@
 // import { AppBar } from './AppBar/AppBar';
 // import { Suspense } from 'react';
 
+import { Suspense } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 
 export const Layout = () => {
@@ -27,7 +28,9 @@ export const Layout = () => {
         </div>
       </div>
       <hr />
-      <Outlet />
+      <Suspense>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };

@@ -10,16 +10,13 @@
 // import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
-import Home from 'pages/Home/Home';
-import Register from 'pages/Register/Register';
-import Login from 'pages/Login/Login';
-import Contacts from 'pages/Contacts/Contacts';
-import NotFound from 'pages/NotFound/NotFound';
+import { lazy } from 'react';
 
-// const HomePage = lazy(() => import('../pages/Home'));
-// const RegisterPage = lazy(() => import('../pages/Register'));
-// const LoginPage = lazy(() => import('../pages/Login'));
-// const TasksPage = lazy(() => import('../pages/Tasks'));
+const Home = lazy(() => import('pages/Home/Home'));
+const Register = lazy(() => import('pages/Register/Register'));
+const Login = lazy(() => import('pages/Login/Login'));
+const Contacts = lazy(() => import('pages/Contacts/Contacts'));
+const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 
 export const App = () => {
   // const dispatch = useDispatch();
