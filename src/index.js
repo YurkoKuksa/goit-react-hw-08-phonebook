@@ -13,13 +13,20 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Provider } from 'react-redux';
 
 import { store } from './myRedux/store';
+import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <Provider store={store}>
-    <ThemeProvider theme={theme}>
-      <App />
-      <ToastContainer autoClose={1000} />
-      <GlobalStyle />
-    </ThemeProvider>
-  </Provider>
+  <BrowserRouter basename="/goit-react-hw-08-phonebook">
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <App />
+        <ToastContainer autoClose={1000} />
+        <GlobalStyle />
+      </ThemeProvider>
+    </Provider>
+  </BrowserRouter>
 );
+
+//  <PersistGate loading={null} persistor={persistor}>
+//    <App />
+//  </PersistGate>;

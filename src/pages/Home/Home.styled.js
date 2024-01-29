@@ -11,6 +11,12 @@ export const Title = styled.h1`
   margin-bottom: 10px;
 `;
 
+export const Picture = styled.img`
+  width: 600px;
+  height: auto;
+  margin: 0 auto;
+`;
+
 export const Lii = styled.li`
   margin-bottom: 5px;
   font-weight: 600;
