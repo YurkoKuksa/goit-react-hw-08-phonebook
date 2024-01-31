@@ -1,7 +1,15 @@
 import { userLoginThunk } from 'myRedux/auth/operations';
 
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+
+import {
+  Asking,
+  ButtonLogin,
+  ClickHere,
+  Container,
+  Label,
+  ParLogin,
+} from './Login.styled';
 
 const Login = () => {
   const dispatch = useDispatch();
@@ -19,34 +27,24 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <p
-        style={{
-          margin: '16px',
-          fontSize: '20px',
-          color: 'darkblue',
-          fontWeight: '700',
-        }}
-      >
-        Login
-      </p>
+    <Container>
+      <ParLogin>Login</ParLogin>
+
       <form onSubmit={onSubmit}>
-        <label style={{ margin: '16px' }}>
+        <Label>
           Email <input type="email" name="email" />
-        </label>
-        <label style={{ margin: '16px' }}>
+        </Label>
+        <Label>
           Password <input type="password" name="password" />
-        </label>
-        <button type="submit">Login</button>
+        </Label>
+
+        <ButtonLogin type="submit">Login</ButtonLogin>
       </form>
-      <p style={{ margin: '16px' }}>You haven't signed up yet? </p>
-      <Link
-        style={{ fontWeight: '700', color: 'darkgreen', margin: '16px' }}
-        to="/register"
-      >
-        Click here
-      </Link>
-    </div>
+
+      <Asking>Haven't signed up yet? </Asking>
+
+      <ClickHere to="/register">Click here</ClickHere>
+    </Container>
   );
 };
 
