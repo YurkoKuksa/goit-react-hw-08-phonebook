@@ -2,10 +2,6 @@ import { registerThunk } from 'myRedux/auth/operations';
 import { Picture } from 'pages/Home/Home.styled';
 import { useDispatch } from 'react-redux';
 
-// Boiko
-// email: 'boiko@email.com';
-// password: '12345678';
-
 const Register = () => {
   const dispatch = useDispatch();
 

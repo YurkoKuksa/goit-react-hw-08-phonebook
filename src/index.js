@@ -29,7 +29,3 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     </Provider>
   </BrowserRouter>
 );
-
-//  <PersistGate loading={null} persistor={persistor}>
-//    <App />
-//  </PersistGate>;

@@ -10,9 +10,13 @@
 // import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Layout/Layout';
-import { lazy } from 'react';
+import { lazy, useEffect } from 'react';
 import { PrivateRoute } from 'routes/PrivateRoute';
 import { RestrictedRoute } from 'routes/PublicRoute';
+import { useDispatch } from 'react-redux';
+import { useAuth } from './hooks/useAuth';
+import { refreshUserThunk } from 'myRedux/auth/operations';
+import { Loader } from './Loader/Loader';
 
 const Home = lazy(() => import('pages/Home/Home'));
 const Register = lazy(() => import('pages/Register/Register'));
@@ -21,16 +25,14 @@ const Contacts = lazy(() => import('pages/Contacts/Contacts'));
 const NotFound = lazy(() => import('pages/NotFound/NotFound'));
 
 export const App = () => {
-  // const dispatch = useDispatch();
-
-  //   // useEffect(() => {
-  //   //   dispatch(refreshUser());
-  //   // }, [dispatch]);
-  // return
-  /*  isRefreshing ? (
-    <b>Refreshing user...</b>
-  ) :  */
-  return (
+  const dispatch = useDispatch();
+  const { isRefreshing } = useAuth();
+  useEffect(() => {
+    dispatch(refreshUserThunk());
+  }, [dispatch]);
+  return isRefreshing ? (
+    <Loader />
+  ) : (
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -57,34 +59,3 @@ export const App = () => {
     </Routes>
   );
 };
-
-// export const App = () => {
-//
-//   const { isRefreshing } = useAuth();
-
-//
-//     <Routes>
-//
-//         <Route index element={<HomePage />} />
-//         <Route
-//           path="/register"
-//           element={
-//             <RestrictedRoute redirectTo="/tasks" component={<RegisterPage />} />
-//           }
-//         />
-//         <Route
-//           path="/login"
-//           element={
-//             <RestrictedRoute redirectTo="/tasks" component={<LoginPage />} />
-//           }
-//         />
-//         <Route
-//           path="/tasks"
-//           element={
-//             <PrivateRoute redirectTo="/login" component={<TasksPage />} />
-//           }
-//         />
-//       </Route>
-//     </Routes>
-//   );
-// };
