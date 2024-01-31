@@ -8,29 +8,32 @@ const Home = () => {
   // const handleSignUp = () => {
   //   setIsSignedUp(true);
   // };
-
+  // const isLoggedIn = useSelector(selectIsLoggedIn);
   return (
     <Container>
       <Title>Welcome to the Phonebook</Title>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quisquam
-        reiciendis quaerat nesciunt, minima eum tenetur doloribus consequatur
-        sequi ad atque aliquid et quis earum reprehenderit cumque, a laboriosam
-        ullam consectetur!
+      <p style={{ margin: '20px' }}>
+        Introducing Web Phonebook, a cutting-edge solution transforming the
+        landscape of contact management. Web Phonebook is a digital platform
+        designed to elevate the way we organize and access our contacts,
+        providing users with a seamless and efficient experience. Boasting
+        advanced search functionalities, intuitive categorization, and
+        cross-device synchronization, Web Phonebook redefines the conventional
+        approach to contact directories. Bid farewell to traditional paper-based
+        methods and embrace a more streamlined way to stay connected. Explore
+        the next generation of contact management with Web Phonebook!
       </p>
+      <Link style={{ fontWeight: '700', margin: '20px' }} to="/contacts">
+        Go to My Phonebook
+      </Link>
       <Picture
         src="https://www.clker.com/cliparts/N/d/2/R/F/r/phone-book.svg"
         alt="Pitcure of the Phonebook"
       />
-      <Link>Sign up</Link> <p>or</p> <Link>Login</Link>
+
       <hr />
       <hr />
-      <Link to="/contacts">Go to My Phonebook</Link>
-      <Picture
-        src="https://www.shutterstock.com/image-photo/open-book-on-table-close-260nw-2282764379.jpg"
-        alt="Pitcure of the Phonebook when you loged in"
-      />
-      <hr />
+
       {/* {isSignedUp ? (
         <>
           <Picture

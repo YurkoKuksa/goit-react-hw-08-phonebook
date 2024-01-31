@@ -1,36 +1,40 @@
-// import { Outlet } from 'react-router-dom';
-// import { Toaster } from 'react-hot-toast';
-// import { AppBar } from './AppBar/AppBar';
-// import { Suspense } from 'react';
-
 import { Suspense } from 'react';
+import { useSelector } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
 
+import { Loader } from 'components/Loader/Loader';
+
+import { selectIsLoggedIn } from 'myRedux/auth/selectors';
+import UserMenu from 'components/UserMenu/UserMenu';
+import { Navigation } from 'components/Navigation/Navigation';
+
 export const Layout = () => {
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+
   return (
-    <div
-      style={{
-        maxWidth: 960,
-        margin: '0 auto',
-        padding: ' 20px',
-      }}
-    >
-      {/* <AppBar />
-      <Suspense fallback={null}>
-        <Outlet />
-      </Suspense>
-      <Toaster position="top-right" reverseOrder={false} /> */}
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <Link to="/">Home</Link>
-        <div style={{ display: 'flex', gap: '16px' }}>
-          <Link to="/register">Sign up</Link>
-          <Link to="/login">Login</Link>
+    <>
+      <header
+        style={{
+          maxWidth: 960,
+          margin: '0 auto',
+          padding: ' 20px',
+        }}
+      >
+        <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+          <Link to="/">
+            <p>HOME || ALONE </p>
+          </Link>
+
+          {isLoggedIn ? <UserMenu /> : <Navigation />}
         </div>
-      </div>
-      <hr />
-      <Suspense>
+
+        {isLoggedIn && <UserMenu />}
+
+        <hr />
+      </header>
+      <Suspense fallback={<Loader />}>
         <Outlet />
       </Suspense>
-    </div>
+    </>
   );
 };

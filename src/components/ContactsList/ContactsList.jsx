@@ -6,12 +6,12 @@ import {
   Paragraph,
 } from './ContactsList.styled';
 import { useDispatch, useSelector } from 'react-redux';
-import { deleteContactsThunk } from 'myRedux/operations';
+import { deleteContactsThunk } from 'myRedux/contacts/operations';
 import {
   selectContacts,
   selectFilter,
   selectIsLoading,
-} from 'myRedux/selectors';
+} from 'myRedux/contacts/selectors';
 
 export const ContactsList = () => {
   const dispatch = useDispatch();
