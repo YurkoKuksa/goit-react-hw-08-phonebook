@@ -12,7 +12,7 @@ const UserMenu = () => {
       <p>mango@mail.com</p>
       <button>Logout</button>
 
-      {isLoggedIn && (
+      {isLoggedIn && user?.name && (
         <div>
           <p>Welcome, {user.name}</p>
           <button type="button" onClick={() => dispatch(userLogoutThunk())}>

@@ -9,8 +9,6 @@ const clearAuthHeader = () => {
   axios.defaults.headers.common.Authorization = ``;
 };
 
-// email: 'vasya123@email.com';
-// password: '12345678';
 export const registerThunk = createAsyncThunk(
   'auth/registerUser',
   async (credentials, thunkApi) => {
