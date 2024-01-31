@@ -21,7 +21,7 @@ const contactsSlice = createSlice({
         state.contacts = action.payload;
       })
       .addCase(addContactsThunk.fulfilled, (state, action) => {
-        state.contacts = state.contacts.concat(action.payload);
+        state.contacts.push(action.payload);
       })
       .addCase(deleteContactsThunk.fulfilled, (state, action) => {
         state.contacts = state.contacts.filter(

@@ -9,9 +9,6 @@ const UserMenu = () => {
 
   return (
     <div>
-      <p>mango@mail.com</p>
-      <button>Logout</button>
-
       {isLoggedIn && user?.name && (
         <div>
           <p>Welcome, {user.name}</p>

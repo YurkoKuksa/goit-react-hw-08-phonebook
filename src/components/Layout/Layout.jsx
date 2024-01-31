@@ -2,8 +2,6 @@ import { Suspense } from 'react';
 import { useSelector } from 'react-redux';
 import { Link, Outlet } from 'react-router-dom';
 
-import { Loader } from 'components/Loader/Loader';
-
 import { selectIsLoggedIn } from 'myRedux/auth/selectors';
 import UserMenu from 'components/UserMenu/UserMenu';
 import { Navigation } from 'components/Navigation/Navigation';
@@ -22,17 +20,18 @@ export const Layout = () => {
       >
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
           <Link to="/">
-            <p>HOME || ALONE </p>
+            <p> || HOME ||</p>
+          </Link>
+          <Link style={{ fontWeight: '700', margin: '20px' }} to="/contacts">
+            Go to My Phonebook
           </Link>
 
           {isLoggedIn ? <UserMenu /> : <Navigation />}
         </div>
 
-        {isLoggedIn && <UserMenu />}
-
         <hr />
       </header>
-      <Suspense fallback={<Loader />}>
+      <Suspense /* fallback={<Loader />} */>
         <Outlet />
       </Suspense>
     </>

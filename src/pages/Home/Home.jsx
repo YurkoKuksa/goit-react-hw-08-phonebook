@@ -1,8 +1,6 @@
 import { Link } from 'react-router-dom';
 import { Container, Picture, Title } from './Home.styled';
 
-// import Loader from 'components/Loader/Loader';
-
 const Home = () => {
   // const [isSignedUp, setIsSignedUp] = useState(false);
   // const handleSignUp = () => {
