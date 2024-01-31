@@ -20,6 +20,7 @@ export const HeaderTwo = styled.h2`
     color: #5b5885;
   }
 `;
+
 export const Error = styled.p`
   display: flex;
   justify-content: center;

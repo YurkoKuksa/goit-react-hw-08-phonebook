@@ -1,17 +1,17 @@
-import { Link } from 'react-router-dom';
+import { BoxUl, ClickLink, List } from './Navigation.styled';
 
 export const Navigation = () => {
   return (
     <div>
       <nav>
-        <ul style={{ display: 'flex', gap: '16px' }}>
-          <li>
-            <Link to="/register">Sign up</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
+        <BoxUl>
+          <List>
+            <ClickLink to="/register">Sign up</ClickLink>
+          </List>
+          <List>
+            <ClickLink to="/login">Login</ClickLink>
+          </List>
+        </BoxUl>
       </nav>
     </div>
   );

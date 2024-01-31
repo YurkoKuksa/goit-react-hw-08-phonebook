@@ -1,6 +1,7 @@
 import { userLogoutThunk } from 'myRedux/auth/operations';
 import { selectIsLoggedIn, selectUser } from 'myRedux/auth/selectors';
 import { useDispatch, useSelector } from 'react-redux';
+import { Box, Click } from './UserMenu.styled';
 
 const UserMenu = () => {
   const dispatch = useDispatch();
@@ -10,12 +11,12 @@ const UserMenu = () => {
   return (
     <div>
       {isLoggedIn && user?.name && (
-        <div>
+        <Box>
           <p>Welcome, {user.name}</p>
-          <button type="button" onClick={() => dispatch(userLogoutThunk())}>
+          <Click type="button" onClick={() => dispatch(userLogoutThunk())}>
             Logout
-          </button>
-        </div>
+          </Click>
+        </Box>
       )}
     </div>
   );

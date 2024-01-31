@@ -1,19 +1,10 @@
-// import { useEffect, lazy } from 'react';
-// import { Route, Routes } from 'react-router-dom';
-// import { Layout } from './Layout';
-// import { PrivateRoute } from './PrivateRoute';
-// import { RestrictedRoute } from './RestrictedRoute';
-// import { refreshUser } from 'redux/auth/operations';
-// import { useAuth } from 'hooks';
-
-// import { useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
-import { Layout } from './Layout/Layout';
 import { lazy, useEffect } from 'react';
+
+import { useDispatch } from 'react-redux';
 import { PrivateRoute } from 'routes/PrivateRoute';
 import { RestrictedRoute } from 'routes/PublicRoute';
-import { useDispatch } from 'react-redux';
+import { Layout } from './Layout/Layout';
 import { useAuth } from './hooks/useAuth';
 import { refreshUserThunk } from 'myRedux/auth/operations';
 import { Loader } from './Loader/Loader';
@@ -30,6 +21,7 @@ export const App = () => {
   useEffect(() => {
     dispatch(refreshUserThunk());
   }, [dispatch]);
+
   return isRefreshing ? (
     <Loader />
   ) : (

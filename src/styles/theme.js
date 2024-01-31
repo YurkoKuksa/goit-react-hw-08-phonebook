@@ -1,10 +1,10 @@
 export const theme = Object.freeze({
   colors: {
-    // accent: '#2196F3',
-    // white: '#ffffff',
-    // gray: '#9e9e9e',
-    // light: '#f2f2f2',
-    //     dark: '#212121',
+    accent: '#2196F3',
+    white: '#ffffff',
+    gray: '#9e9e9e',
+    light: '#f2f2f2',
+    dark: '#212121',
     darkMagenta: '#8b008b',
     crimson: '#dc143c',
     dodgerBlue: '#1e90ff',
