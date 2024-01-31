@@ -12,17 +12,6 @@ export const ParLogin = styled.p`
   font-weight: 700;
 `;
 
-export const List = styled.li`
-  font-weight: 500;
-
-  transition: transform 0.3s, filter 0.3s;
-
-  &:hover {
-    transform: scale(1.1);
-    filter: brightness(0.8);
-  }
-`;
-
 export const Asking = styled.p`
   margin: 40px 16px 10px;
   font-weight: 600;
@@ -92,4 +81,8 @@ export const ButtonLogin = styled.button`
 export const Label = styled.label`
   font-weight: 700;
   margin: 16px;
+`;
+
+export const FormStyled = styled.form`
+  margin-bottom: 20px;
 `;

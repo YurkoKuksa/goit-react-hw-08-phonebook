@@ -1,6 +1,15 @@
 import { registerThunk } from 'myRedux/auth/operations';
-import { Picture } from 'pages/Home/Home.styled';
 import { useDispatch } from 'react-redux';
+
+import {
+  ButtonRegister,
+  Container,
+  Form,
+  Label,
+  ParRegister,
+  PicBox,
+  PictureRegister,
+} from './Register.styled';
 
 const Register = () => {
   const dispatch = useDispatch();
@@ -24,42 +33,35 @@ const Register = () => {
   };
 
   return (
-    <div>
-      <p
-        style={{
-          margin: '16px',
-          fontSize: '20px',
-          color: 'darkblue',
-          fontWeight: '700',
-        }}
-      >
-        Sign Up
-      </p>
-      <form onSubmit={onSubmit}>
-        <label style={{ margin: '16px' }}>
-          Name <input type="text" name="name" autoComplete="username" />
-        </label>
-        <label style={{ margin: '16px' }}>
-          Email <input type="email" name="email" autoComplete="user-email" />
-        </label>
-        <label style={{ margin: '16px' }}>
-          Password
+    <Container>
+      <ParRegister>Sign Up</ParRegister>
+
+      <Form onSubmit={onSubmit}>
+        <Label>
+          Name&nbsp; <input type="text" name="name" autoComplete="username" />
+        </Label>
+        <Label>
+          Email&nbsp;
+          <input type="email" name="email" autoComplete="user-email" />
+        </Label>
+        <Label>
+          Password&nbsp;
           <input
             type="password"
             name="password"
             autoComplete="current-password"
           />
-        </label>
-        <button type="submit">Sign Up</button>
-      </form>
+        </Label>
+        <ButtonRegister type="submit">Sign Up</ButtonRegister>
+      </Form>
       <hr />
-      <div style={{ margin: '20px', overflow: 'hidden', height: '400px' }}>
-        <Picture
+      <PicBox>
+        <PictureRegister
           src="https://www.shutterstock.com/image-photo/open-book-on-table-close-260nw-2282764379.jpg"
-          alt="Pitcure of the Phonebook when you loged in"
+          alt="Pitcure of the Phonebook when you login"
         />
-      </div>
-    </div>
+      </PicBox>
+    </Container>
   );
 };
 

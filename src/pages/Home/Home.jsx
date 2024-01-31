@@ -1,5 +1,11 @@
-import { Link } from 'react-router-dom';
-import { Container, Paragraph, Picture, Title } from './Home.styled';
+import {
+  Container,
+  Paragraph,
+  Picture,
+  StyledLink,
+  Title,
+  Wrapper,
+} from './Home.styled';
 
 const Home = () => {
   return (
@@ -16,7 +22,9 @@ const Home = () => {
         methods and embrace a more streamlined way to stay connected. Explore
         the next generation of contact management with Web Phonebook!
       </Paragraph>
-      <Link to="/contacts">Go to My Phonebook</Link>
+      <Wrapper>
+        <StyledLink to="/contacts">My Phonebook</StyledLink>
+      </Wrapper>
       <Picture
         src="https://www.clker.com/cliparts/N/d/2/R/F/r/phone-book.svg"
         alt="Pitcure of the Phonebook"

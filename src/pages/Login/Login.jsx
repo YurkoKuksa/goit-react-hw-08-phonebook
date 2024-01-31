@@ -7,6 +7,7 @@ import {
   ButtonLogin,
   ClickHere,
   Container,
+  FormStyled,
   Label,
   ParLogin,
 } from './Login.styled';
@@ -30,7 +31,7 @@ const Login = () => {
     <Container>
       <ParLogin>Login</ParLogin>
 
-      <form onSubmit={onSubmit}>
+      <FormStyled onSubmit={onSubmit}>
         <Label>
           Email <input type="email" name="email" />
         </Label>
@@ -39,8 +40,8 @@ const Login = () => {
         </Label>
 
         <ButtonLogin type="submit">Login</ButtonLogin>
-      </form>
-
+      </FormStyled>
+      <hr />
       <Asking>Haven't signed up yet? </Asking>
 
       <ClickHere to="/register">Click here</ClickHere>
